@@ -17,4 +17,10 @@ class CuentaTest {
         Assertions.assertEquals(esperado,real);
         Assertions.assertTrue(real.equals("Juan Carlos"));
     }
+    // Ctrl +shfit f10
+    @Test
+    void testSaldoCuenta() {
+        Cuenta cuenta =new Cuenta("Juan Carlos", new BigDecimal("10000.12345"));
+        Assertions.assertEquals(10000.12345,cuenta.getSaldo().doubleValue());
+    }
 }
