@@ -66,4 +66,15 @@ class CuentaTest {
         String esperado="Dinero Insuficiente";
         Assertions.assertEquals(esperado,actual);
     }
+
+    @Test
+    void testTranferirDineroCuentas() {
+        Cuenta cuenta1 =new Cuenta("Juan Carlos", new BigDecimal("2500"));
+        Cuenta cuenta2 =new Cuenta("Andres", new BigDecimal("1500.8989"));
+        Banco banco = new Banco();
+        banco.setNombre("Banco del Estado");
+        banco.transferir(cuenta2,cuenta1,new BigDecimal("500"));
+        Assertions.assertEquals("1000.8989",cuenta2.getSaldo().toPlainString());
+        Assertions.assertEquals("3000",cuenta1.getSaldo().toPlainString());
+    }
 }
