@@ -1,9 +1,13 @@
 package org.solaris.junit5app.ejemplos.models;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class Banco {
+
     private String nombre;
+
+    private List<Cuenta> cuentas;
 
     public String getNombre() {
         return nombre;
@@ -11,6 +15,14 @@ public class Banco {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public List<Cuenta> getCuentas() {
+        return cuentas;
+    }
+
+    public void setCuentas(List<Cuenta> cuentas) {
+        this.cuentas = cuentas;
     }
 
     public void transferir(Cuenta origen, Cuenta destino, BigDecimal monto){
